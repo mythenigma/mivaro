@@ -5,7 +5,7 @@
     ? localStorage.getItem(storageKey)
     : "en";
 
-  function applyLanguage(lang) {
+  function applyLanguage(lang, persist) {
     document.documentElement.lang = lang === "zh" ? "zh-CN" : lang === "tr" ? "tr" : "en";
     document.querySelectorAll("[data-en][data-zh]").forEach((node) => {
       node.textContent = node.dataset[lang] || node.dataset.en;
@@ -14,13 +14,13 @@
       button.classList.toggle("active", button.dataset.lang === lang);
       button.setAttribute("aria-pressed", button.dataset.lang === lang ? "true" : "false");
     });
-    localStorage.setItem(storageKey, lang);
+    if (persist) localStorage.setItem(storageKey, lang);
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".lang-toggle button").forEach((button) => {
-      button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+      button.addEventListener("click", () => applyLanguage(button.dataset.lang, true));
     });
-    applyLanguage(current);
+    applyLanguage(current, false);
   });
 })();
