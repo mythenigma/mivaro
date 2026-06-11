@@ -1,14 +1,14 @@
 (function () {
   const storageKey = "mivora-language";
-  const supported = ["en", "zh"];
+  const supported = ["en", "zh", "tr"];
   const current = supported.includes(localStorage.getItem(storageKey))
     ? localStorage.getItem(storageKey)
     : "en";
 
   function applyLanguage(lang) {
-    document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+    document.documentElement.lang = lang === "zh" ? "zh-CN" : lang === "tr" ? "tr" : "en";
     document.querySelectorAll("[data-en][data-zh]").forEach((node) => {
-      node.textContent = node.dataset[lang];
+      node.textContent = node.dataset[lang] || node.dataset.en;
     });
     document.querySelectorAll(".lang-toggle button").forEach((button) => {
       button.classList.toggle("active", button.dataset.lang === lang);
