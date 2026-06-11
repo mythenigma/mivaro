@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mivora Group">
+  <rect width="64" height="64" rx="10" fill="#111817"/>
+  <path d="M13 48V16h8.2l10.9 17.9L43 16h8v32h-8.6V31.2L34.5 44h-5.2l-7.8-12.8V48H13z" fill="#f7f6f1"/>
+  <path d="M13 53h38" stroke="#c9963e" stroke-width="4" stroke-linecap="square"/>
+</svg>
