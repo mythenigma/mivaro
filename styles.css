@@ -387,6 +387,19 @@ h3 {
     url("e1b6a33fd10ffb26ba08e1580017c1f7.jpg") center / cover;
 }
 
+.cta-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+}
+
+.cta-note a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+}
+
 .page-main {
   padding-top: 78px;
 }
@@ -551,6 +564,11 @@ h3 {
 .contact-panel dd {
   margin: 4px 0 0;
   font-size: 18px;
+}
+
+.contact-panel a {
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.38);
 }
 
 .site-footer {
